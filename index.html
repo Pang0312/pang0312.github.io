@@ -3,96 +3,226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pang Cheng Siang | Software Engineering Portfolio</title>
+  <meta name="description" content="Pang Cheng Siang - Software Engineering Student Portfolio" />
+  <title>Pang Cheng Siang | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a href="#home" class="logo">Pang<span>.</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-    <nav id="navMenu">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  <header class="site-header" id="top">
+    <nav class="navbar container">
+      <a href="#home" class="brand" aria-label="Go to home">
+        <span class="brand-mark">P</span>
+        <span>Pang Cheng Siang</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero section">
-      <div class="hero-text reveal">
-        <p class="eyebrow">Software Engineering Student</p>
-        <h1>Hi, I'm <span>Pang Cheng Siang</span></h1>
-        <p class="typing" id="typingText"></p>
-        <p class="hero-desc">Diploma in Information and Communication Technology (Software Engineering) student at Asia Pacific University, focused on building clean, responsive, and user-friendly software projects.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="assets/cv/Pang_Cheng_Siang_CV.pdf" download>Download CV</a>
-          <a class="btn secondary" href="#projects">View Projects</a>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Software Engineering Student</p>
+          <h1>Hi, I'm <span>Pang Cheng Siang</span></h1>
+          <p class="hero-text">
+            I build web applications, desktop systems and simple programs through my university projects and learning journey.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="assets/docs/Pang_Cheng_Siang_CV.pdf" download>Download CV</a>
+          </div>
+          <div class="quick-stack" aria-label="Main technologies">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+            <span>Java</span>
+            <span>Python</span>
+            <span>MySQL</span>
+          </div>
+        </div>
+
+        <div class="hero-photo reveal">
+          <div class="photo-card">
+            <img src="assets/images/profile.jpg" alt="Pang Cheng Siang" />
+          </div>
         </div>
       </div>
-      <div class="profile-card reveal">
-        <img src="assets/img/profile.jpeg" alt="Pang Cheng Siang profile photo" />
-        <div><strong>Pang Cheng Siang</strong><p>CGPA: 3.29</p><p>Internship: 20 Jul 2026 – 9 Oct 2026</p></div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container split-section reveal">
+        <div>
+          <p class="section-kicker">About Me</p>
+          <h2>Simple, practical and always learning.</h2>
+        </div>
+        <p class="about-text">
+          Hi, I'm Pang Cheng Siang, a Software Engineering student at Asia Pacific University (APU). I enjoy building websites, Java desktop systems and Python programs while improving my programming, database and UI design skills.
+        </p>
       </div>
     </section>
 
-    <section id="about" class="section reveal">
-      <h2>About Me</h2>
-      <p class="wide">I am a motivated Software Engineering student currently pursuing a Diploma in ICT (Software Engineering). I enjoy web development, database systems, UI/UX design, and practical software projects. I am eager to learn, improve my technical skills, and contribute to real-world software development during internship.</p>
-    </section>
+    <section class="section alt" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Skills & Tools</p>
+          <h2>Technologies I have learned and used</h2>
+        </div>
 
-    <section id="skills" class="section reveal">
-      <h2>Skills & Tools</h2>
-      <div class="grid three">
-        <div class="card"><h3>Programming</h3><p>HTML5, CSS3, JavaScript, Java, Python, SQL, MySQL</p></div>
-        <div class="card"><h3>Software Knowledge</h3><p>Object-Oriented Programming, System Analysis & Design, Database Design, Information Systems, Computer Architecture</p></div>
-        <div class="card"><h3>Additional Knowledge</h3><p>UI/UX Design, Introduction to Cybersecurity, Introduction to AI, Cloud Computing Concepts, Responsive Web Design</p></div>
-        <div class="card"><h3>Development Tools</h3><p>Visual Studio Code, Apache NetBeans, PyCharm, GitHub, WampServer, pgAdmin 4</p></div>
-        <div class="card"><h3>Networking & Office</h3><p>Cisco Packet Tracer, Microsoft Word, Microsoft Excel, Canva</p></div>
-        <div class="card"><h3>Languages</h3><p>Chinese: Mother Tongue<br>English: Fluent<br>Malay: Fluent</p></div>
+        <div class="skills-layout">
+          <div class="skill-box reveal">
+            <h3>Programming Languages</h3>
+            <div class="tag-grid">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>PHP</span>
+              <span>Java</span>
+              <span>Python</span>
+              <span>SQL / MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-box reveal">
+            <h3>Skills & Knowledge</h3>
+            <div class="tag-grid">
+              <span>UI/UX Design</span>
+              <span>Responsive Web Design</span>
+              <span>Object-Oriented Programming</span>
+              <span>Database Design</span>
+              <span>Information Systems</span>
+              <span>Cloud Concepts</span>
+              <span>Computer Architecture</span>
+              <span>System Analysis & Design</span>
+              <span>Introduction to Cybersecurity</span>
+              <span>Introduction to AI</span>
+            </div>
+          </div>
+
+          <div class="skill-box reveal">
+            <h3>Technical Tools</h3>
+            <div class="tag-grid">
+              <span>Visual Studio Code</span>
+              <span>Apache NetBeans</span>
+              <span>PyCharm</span>
+              <span>GitHub</span>
+              <span>WampServer</span>
+              <span>Cisco Packet Tracer</span>
+              <span>Microsoft Word</span>
+              <span>Microsoft Excel</span>
+              <span>Canva</span>
+              <span>pgAdmin 4</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="projects" class="section reveal">
-      <h2>Featured Projects</h2>
-      <p class="section-note">Click a project card to view project details in a pop-up. The projects are shown as portfolio previews, not running PHP/MySQL systems inside GitHub Pages.</p>
-      <div class="grid two">
-        <article class="project-card" data-project="rwdd">
-          <div class="project-preview rwdd-preview">RWDD</div>
-          <h3>Assignment Submission System</h3>
-          <p>Responsive web project for uploading and managing assignment submissions.</p>
-          <span>HTML • CSS • JavaScript • VS Code</span>
-        </article>
-        <article class="project-card" data-project="trev">
-          <img src="assets/img/trev_1.jpg" alt="Trev Asia Trip Planner preview" />
-          <h3>Trev – Asia Trip Planner</h3>
-          <p>Capstone travel planner for browsing destinations and organizing Asia trips.</p>
-          <span>HTML • CSS • JavaScript • MySQL • WampServer</span>
-        </article>
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Projects</p>
+          <h2>Project Showcase</h2>
+          <p>Click a project card to view details and screenshots.</p>
+        </div>
+
+        <div class="project-grid" id="projectGrid"></div>
       </div>
     </section>
 
-    <section id="education" class="section reveal">
-      <h2>Education</h2>
-      <div class="timeline">
-        <div><strong>Asia Pacific University (APU)</strong><p>Diploma in Information and Communication Technology (Software Engineering), 2024 – Present</p><p>CGPA: 3.29</p></div>
-        <div><strong>SMK Seri Perling</strong><p>SPM, 2019 – 2024</p></div>
+    <section class="section alt" id="education">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Education</p>
+          <h2>Academic Background</h2>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <span>2024 - Present</span>
+            <h3>Asia Pacific University (APU)</h3>
+            <p>Diploma in Information and Communication Technology (Software Engineering)</p>
+          </div>
+          <div class="timeline-item">
+            <span>2019 - 2024</span>
+            <h3>SMK Seri Perling</h3>
+            <p>SPM</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="section reveal contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:pangcs0312@gmail.com">pangcs0312@gmail.com</a></p>
-      <p>Phone: <a href="tel:+601159954889">+60 11-5995 4889</a></p>
-      <a class="btn primary" href="assets/cv/Pang_Cheng_Siang_CV.pdf" download>Download My CV</a>
+    <section class="section" id="contact">
+      <div class="container contact-card reveal">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>Let's connect</h2>
+          <p>You can contact me through email, phone, LinkedIn or GitHub.</p>
+        </div>
+        <div class="contact-grid">
+          <a href="mailto:pangcs0312@gmail.com">📧 pangcs0312@gmail.com</a>
+          <a href="tel:+601159954889">📱 +60 11-5995 4889</a>
+          <a href="https://www.linkedin.com/in/cheng-siang-pang-93750a330/" target="_blank" rel="noopener">💼 LinkedIn Profile</a>
+          <a href="https://github.com/pang0312" target="_blank" rel="noopener">💻 github.com/pang0312</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <div class="modal" id="projectModal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close" id="closeModal">×</button>
-      <div id="modalBody"></div>
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Pang Cheng Siang. All rights reserved.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close="modal"></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" data-close="modal" aria-label="Close project details">×</button>
+      <div class="modal-body">
+        <div class="modal-main-image">
+          <button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Previous image">‹</button>
+          <img id="modalImage" src="" alt="Project screenshot" />
+          <button class="gallery-nav gallery-next" id="galleryNext" aria-label="Next image">›</button>
+        </div>
+
+        <div class="modal-info">
+          <p class="modal-type" id="modalType"></p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+
+          <h3>Technologies</h3>
+          <div class="modal-tags" id="modalTags"></div>
+
+          <h3>Features / Highlights</h3>
+          <ul id="modalFeatures"></ul>
+
+          <h3>Gallery</h3>
+          <div class="thumb-grid" id="thumbGrid"></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <footer>© 2026 Pang Cheng Siang. Built with HTML, CSS and JavaScript.</footer>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+    <img id="lightboxImage" src="" alt="Expanded project screenshot" />
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

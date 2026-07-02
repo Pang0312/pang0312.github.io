@@ -1,6 +1,270 @@
-const menuBtn=document.getElementById('menuBtn');const nav=document.getElementById('navMenu');menuBtn.addEventListener('click',()=>nav.classList.toggle('show'));document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('show')));
-const words=['Web Development • UI/UX • Database • Cloud Concepts','Java • Python • HTML • CSS • JavaScript • MySQL','Seeking Software Engineering Internship Experience'];let wi=0,ci=0,del=false;function type(){const t=words[wi];document.getElementById('typingText').textContent=t.slice(0,ci);if(!del&&ci<t.length)ci++;else if(del&&ci>0)ci--;else{del=!del;if(!del)wi=(wi+1)%words.length}setTimeout(type,del?45:75)}type();
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
-const data={rwdd:{title:'Assignment Submission System',subtitle:'Responsive Web Design & Development Project',desc:'A responsive web-based platform designed to help students upload and manage assignment submissions in an organized way. The focus is on clean layout, usability, and mobile-friendly design.',features:['Assignment upload flow','Organized submission management','Responsive desktop and phone layout','Clear navigation and user interface','Built as academic web development project'],tech:['HTML','CSS','JavaScript','Visual Studio Code'],gallery:['<div>Upload Flow</div>','<div>Student Dashboard</div>','<div>Responsive Layout</div>']},trev:{title:'Trev – Asia Trip Planner',subtitle:'Capstone Project',desc:'A travel planning web application for exploring Asian destinations and organizing trip information. It demonstrates front-end interface design, database understanding, and local development using WampServer/MySQL.',features:['Destination browsing','Trip planning concept','Itinerary organization','Travel information pages','Database-based system concept','User-friendly UI'],tech:['HTML','CSS','JavaScript','MySQL','WampServer','VS Code'],gallery:['assets/img/trev_1.jpg','assets/img/trev_2.jpg','assets/img/trev_3.jpg']}};
-const modal=document.getElementById('projectModal'),body=document.getElementById('modalBody');document.querySelectorAll('.project-card').forEach(card=>card.onclick=()=>{const p=data[card.dataset.project];body.innerHTML=`<h2>${p.title}</h2><p class="eyebrow">${p.subtitle}</p><p>${p.desc}</p><div class="modal-gallery">${p.gallery.map(g=>g.startsWith('<')?g:`<img src="${g}" alt="${p.title} screenshot">`).join('')}</div><h3>Key Features</h3><ul>${p.features.map(f=>`<li>${f}</li>`).join('')}</ul><h3>Technologies Used</h3><p>${p.tech.map(t=>`<span class="tag">${t}</span>`).join('')}</p><p class="section-note">Note: This portfolio shows the project details in an interactive pop-up. PHP/MySQL features are not run inside GitHub Pages.</p>`;modal.classList.add('show');modal.setAttribute('aria-hidden','false')});
-document.getElementById('closeModal').onclick=()=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true')};modal.onclick=e=>{if(e.target===modal)document.getElementById('closeModal').click()};
+const projects = [
+  {
+    title: 'EcoEats APU',
+    type: 'Responsive Web Design & Development',
+    description: 'A web-based food waste reduction system for APU. It includes student dashboards, waste tracking, feedback, leaderboard, vendor functions and sustainability-related features.',
+    cover: 'assets/images/ecoeats-dashboard.webp',
+    tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'WampServer'],
+    features: [
+      'Student dashboard with weekly and monthly waste summary',
+      'Profile page with student information and statistics overview',
+      'Waste log module to record food waste and CO₂ impact',
+      'Feedback and rating page for students',
+      'Leaderboard and challenge-related pages',
+      'Vendor dashboard for event and food sharing overview'
+    ],
+    images: [
+      { src: 'assets/images/ecoeats-dashboard.webp', alt: 'EcoEats APU student dashboard' },
+      { src: 'assets/images/ecoeats-profile.webp', alt: 'EcoEats APU profile page' },
+      { src: 'assets/images/ecoeats-sidebar.webp', alt: 'EcoEats APU sidebar navigation' },
+      { src: 'assets/images/ecoeats-feedback-form.webp', alt: 'EcoEats APU feedback form' },
+      { src: 'assets/images/ecoeats-feedback-list.webp', alt: 'EcoEats APU feedback list' },
+      { src: 'assets/images/ecoeats-waste-log.webp', alt: 'EcoEats APU waste log page' },
+      { src: 'assets/images/ecoeats-vendor-dashboard.webp', alt: 'EcoEats APU vendor dashboard' },
+      { src: 'assets/images/ecoeats-leaderboard.webp', alt: 'EcoEats APU leaderboard page' }
+    ]
+  },
+  {
+    title: 'Trev - Asia Trip Planner',
+    type: 'Capstone Project',
+    description: 'A travel planning website for discovering Asian destinations, checking destination information, planning trips, managing saved trips and reading travel reviews.',
+    cover: 'assets/images/trev-logo.png',
+    tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'WampServer'],
+    features: [
+      'Home page with destination discovery section',
+      'Discover page with filters and destination cards',
+      'Destination detail page with information and reviews',
+      'Trip planner page for creating travel plans',
+      'My Trips page for planned and completed trips',
+      'Reviews page with user review cards'
+    ],
+    images: [
+      { src: 'assets/images/trev-home.webp', alt: 'Trev home page' },
+      { src: 'assets/images/trev-discover.webp', alt: 'Trev discover page' },
+      { src: 'assets/images/trev-detail.webp', alt: 'Trev destination detail page' },
+      { src: 'assets/images/trev-planner.webp', alt: 'Trev trip planner page' },
+      { src: 'assets/images/trev-mytrips.webp', alt: 'Trev my trips page' },
+      { src: 'assets/images/trev-reviews.webp', alt: 'Trev reviews page' }
+    ]
+  },
+  {
+    title: 'Tuition Centre Management System',
+    type: 'Java Desktop Application',
+    description: 'A Java Swing desktop application built in Apache NetBeans. It manages basic tuition centre functions such as student records, schedules, payments and role-based dashboards.',
+    cover: 'assets/images/tuition-logo.png',
+    tags: ['Java', 'Java Swing', 'Apache NetBeans', 'OOP', 'File Handling'],
+    features: [
+      'Role-based system for receptionist, tutor, student and admin',
+      'Receptionist dashboard with menu buttons',
+      'Student management page for adding, updating and deleting records',
+      'Class schedule and payment-related functions',
+      'Uses Java OOP concepts and text file handling',
+      'Developed as a university group assignment'
+    ],
+    images: [
+      { src: 'assets/images/java-netbeans-design.webp', alt: 'Java project design screen in NetBeans' },
+      { src: 'assets/images/java-dashboard-summary.webp', alt: 'Java project dashboard summary' },
+      { src: 'assets/images/java-receptionist-dashboard.webp', alt: 'Java project receptionist dashboard' },
+      { src: 'assets/images/java-manage-student.webp', alt: 'Java project manage student page' }
+    ]
+  },
+  {
+    title: 'Education Management System',
+    type: 'Python Console Program',
+    description: 'A simple Python console-based system created to practise login, menus, file handling and basic data management. It is a small coursework-style program.',
+    cover: 'assets/images/python-staff.webp',
+    tags: ['Python', 'PyCharm', 'File Handling', 'Console App'],
+    features: [
+      'Simple login system',
+      'Student, staff and admin menu options',
+      'Course browsing and basic student record management',
+      'Stores simple data using text files',
+      'Command-line interface',
+      'Created for Python programming practice'
+    ],
+    images: [
+      { src: 'assets/images/python-staff.webp', alt: 'Python program staff menu' },
+      { src: 'assets/images/python-student.webp', alt: 'Python program student menu' },
+      { src: 'assets/images/python-admin.webp', alt: 'Python program admin menu' }
+    ]
+  }
+];
+
+const projectGrid = document.getElementById('projectGrid');
+const modal = document.getElementById('projectModal');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalType = document.getElementById('modalType');
+const modalDescription = document.getElementById('modalDescription');
+const modalTags = document.getElementById('modalTags');
+const modalFeatures = document.getElementById('modalFeatures');
+const thumbGrid = document.getElementById('thumbGrid');
+const galleryPrev = document.getElementById('galleryPrev');
+const galleryNext = document.getElementById('galleryNext');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.getElementById('lightboxClose');
+
+let activeProject = null;
+let activeIndex = 0;
+
+function createProjectCards() {
+  projects.forEach((project, index) => {
+    const card = document.createElement('button');
+    card.className = 'project-card reveal';
+    card.type = 'button';
+    card.setAttribute('aria-label', `View details for ${project.title}`);
+    card.innerHTML = `
+      <div class="project-cover">
+        <img src="${project.cover}" alt="${project.title}" loading="lazy">
+      </div>
+      <div class="project-content">
+        <span class="project-meta">${project.type}</span>
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <div class="project-tags">
+          ${project.tags.slice(0, 4).map(tag => `<span>${tag}</span>`).join('')}
+        </div>
+        <span class="view-link">View Details →</span>
+      </div>
+    `;
+    card.addEventListener('click', () => openProject(index));
+    projectGrid.appendChild(card);
+  });
+}
+
+function openProject(index) {
+  activeProject = projects[index];
+  activeIndex = 0;
+
+  modalTitle.textContent = activeProject.title;
+  modalType.textContent = activeProject.type;
+  modalDescription.textContent = activeProject.description;
+  modalTags.innerHTML = activeProject.tags.map(tag => `<span>${tag}</span>`).join('');
+  modalFeatures.innerHTML = activeProject.features.map(feature => `<li>${feature}</li>`).join('');
+
+  renderThumbs();
+  updateModalImage();
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function renderThumbs() {
+  thumbGrid.innerHTML = '';
+  activeProject.images.forEach((image, index) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.innerHTML = `<img src="${image.src}" alt="${image.alt}" loading="lazy">`;
+    btn.addEventListener('click', () => {
+      activeIndex = index;
+      updateModalImage();
+    });
+    thumbGrid.appendChild(btn);
+  });
+}
+
+function updateModalImage() {
+  if (!activeProject) return;
+  const image = activeProject.images[activeIndex];
+  modalImage.src = image.src;
+  modalImage.alt = image.alt;
+
+  const thumbs = thumbGrid.querySelectorAll('button');
+  thumbs.forEach((thumb, index) => {
+    thumb.classList.toggle('active', index === activeIndex);
+  });
+}
+
+function changeImage(direction) {
+  if (!activeProject) return;
+  activeIndex = (activeIndex + direction + activeProject.images.length) % activeProject.images.length;
+  updateModalImage();
+}
+
+function openLightbox() {
+  lightboxImage.src = modalImage.src;
+  lightboxImage.alt = modalImage.alt;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+}
+
+document.querySelectorAll('[data-close="modal"]').forEach(btn => {
+  btn.addEventListener('click', closeModal);
+});
+
+galleryPrev.addEventListener('click', () => changeImage(-1));
+galleryNext.addEventListener('click', () => changeImage(1));
+modalImage.addEventListener('click', openLightbox);
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeLightbox();
+    closeModal();
+  }
+  if (modal.classList.contains('open') && event.key === 'ArrowRight') changeImage(1);
+  if (modal.classList.contains('open') && event.key === 'ArrowLeft') changeImage(-1);
+});
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen.toString());
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  const trigger = window.innerHeight * 0.88;
+  reveals.forEach(item => {
+    const top = item.getBoundingClientRect().top;
+    if (top < trigger) item.classList.add('show');
+  });
+}
+
+function setActiveNav() {
+  const sections = document.querySelectorAll('main section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+  let current = 'home';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (window.scrollY >= sectionTop) current = section.id;
+  });
+
+  navItems.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+  });
+}
+
+createProjectCards();
+revealOnScroll();
+setActiveNav();
+window.addEventListener('scroll', () => {
+  revealOnScroll();
+  setActiveNav();
+});
