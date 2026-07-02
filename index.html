@@ -4,143 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pang Cheng Siang | Software Engineering Portfolio</title>
-  <meta name="description" content="Portfolio website of Pang Cheng Siang, Software Engineering student at Asia Pacific University." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar">
-      <a href="#home" class="logo">Pang<span>.</span></a>
-      <button class="nav-toggle" aria-label="Open navigation">☰</button>
-      <ul class="nav-menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <a class="logo" href="#home">Pang<span>.</span></a>
+    <button class="menu-btn" aria-label="Open navigation">☰</button>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
     <section id="home" class="hero section">
-      <div class="hero-content fade-in">
+      <div class="hero-text reveal">
         <p class="eyebrow">Software Engineering Student</p>
-        <h1>Hi, I am <span>Pang Cheng Siang</span></h1>
-        <p class="hero-text">Diploma in ICT Software Engineering student passionate about building clean, useful and user-friendly web and software solutions.</p>
+        <h1>Hi, I’m <span>Pang Cheng Siang</span></h1>
+        <p class="hero-desc">Diploma in ICT (Software Engineering) student at Asia Pacific University with a strong interest in web development, UI/UX, databases, cloud concepts, cybersecurity fundamentals and AI fundamentals.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="assets/Pang_Cheng_Siang_CV.pdf" download>Download CV</a>
-          <a class="btn secondary" href="#projects">View Projects</a>
-        </div>
-      </div>
-      <div class="hero-image fade-in">
-        <div class="image-card">
-          <img src="assets/profile.jpg" alt="Pang Cheng Siang profile photo" />
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="section-title">
-        <p class="eyebrow">About Me</p>
-        <h2>Motivated student ready for real-world software development.</h2>
-      </div>
-      <p>I am currently pursuing a Diploma in Information and Communication Technology, specializing in Software Engineering at Asia Pacific University. I am eager to learn, improve my coding ability, and contribute to internship projects where I can gain hands-on experience.</p>
-      <div class="about-grid">
-        <div class="info-card"><strong>Location</strong><span>Malaysia</span></div>
-        <div class="info-card"><strong>Internship Period</strong><span>20 July 2026 - 9 October 2026</span></div>
-        <div class="info-card"><strong>Email</strong><span>pangcs0312@gmail.com</span></div>
-        <div class="info-card"><strong>Phone</strong><span>+601159954889</span></div>
-      </div>
-    </section>
-
-    <section id="skills" class="section skills">
-      <div class="section-title">
-        <p class="eyebrow">Skills</p>
-        <h2>Technical skills and tools I use.</h2>
-      </div>
-      <div class="skill-layout">
-        <div class="skill-card">
-          <h3>Programming</h3>
-          <div class="tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Java</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>Tools</h3>
-          <div class="tags">
-            <span>VS Code</span><span>PyCharm</span><span>Apache NetBeans</span><span>pgAdmin 4</span><span>GitHub</span><span>Excel</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>Languages</h3>
-          <div class="tags">
-            <span>Chinese</span><span>English</span><span>Malay</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section projects">
-      <div class="section-title">
-        <p class="eyebrow">Projects</p>
-        <h2>Selected project experience.</h2>
-      </div>
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-icon">🌐</div>
-          <h3>Assignment Submission Website</h3>
-          <p>A web-based platform that allows students to upload and manage assignment submissions. Built to organize and store submitted files efficiently.</p>
-          <div class="project-tech"><span>HTML</span><span>Web System</span></div>
-        </article>
-        <article class="project-card">
-          <div class="project-icon">🎓</div>
-          <h3>Education System</h3>
-          <p>A simple education management system developed using Python to handle course-related information and support user interaction.</p>
-          <div class="project-tech"><span>Python</span><span>Management System</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" class="section education">
-      <div class="section-title">
-        <p class="eyebrow">Education</p>
-        <h2>Academic background.</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <span>2024 - Present</span>
-          <h3>Asia Pacific University (APU)</h3>
-          <p>Diploma in Information and Communication Technology (Software Engineering)</p>
-        </div>
-        <div class="timeline-item">
-          <span>2019 - 2024</span>
-          <h3>SMK Seri Perling</h3>
-          <p>SPM</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="contact-box">
-        <p class="eyebrow">Contact</p>
-        <h2>Interested in working together?</h2>
-        <p>I am currently seeking internship opportunities where I can learn, contribute and grow as a software engineering student.</p>
-        <div class="contact-actions">
-          <a class="btn primary" href="mailto:pangcs0312@gmail.com">Email Me</a>
+          <a class="btn primary" href="#projects">View Projects</a>
           <a class="btn secondary" href="assets/Pang_Cheng_Siang_CV.pdf" download>Download CV</a>
         </div>
+        <div class="quick-info">
+          <span>CGPA: <strong>3.29</strong></span>
+          <span>Internship: 20 July 2026 - 9 Oct 2026</span>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <img src="assets/profile.jpg" alt="Pang Cheng Siang profile photo" />
+      </div>
+    </section>
+
+    <section id="about" class="section reveal">
+      <div class="section-title">
+        <p>About Me</p>
+        <h2>Building practical software with clean design</h2>
+      </div>
+      <p class="wide-text">I am a motivated Software Engineering student currently pursuing a Diploma in Information and Communication Technology (Software Engineering) at APU. I enjoy developing web applications, improving user experience, designing databases, and learning how real software systems are planned, built and deployed.</p>
+    </section>
+
+    <section id="skills" class="section reveal">
+      <div class="section-title">
+        <p>Skills</p>
+        <h2>Technical Skills & Tools</h2>
+      </div>
+      <div class="grid three">
+        <div class="card"><h3>Programming</h3><p>HTML5, CSS3, JavaScript, Java, Python, SQL, MySQL</p></div>
+        <div class="card"><h3>Software Knowledge</h3><p>Object-Oriented Programming, System Analysis & Design, Information Systems, UI/UX Design, Database Design</p></div>
+        <div class="card"><h3>Technology Concepts</h3><p>Cloud Computing Concepts, Computer Architecture, Introduction to Cybersecurity, Introduction to Artificial Intelligence</p></div>
+        <div class="card"><h3>Development Tools</h3><p>Visual Studio Code, GitHub, Apache NetBeans, PyCharm, WampServer, pgAdmin 4</p></div>
+        <div class="card"><h3>Networking & Productivity</h3><p>Cisco Packet Tracer, Microsoft Word, Microsoft Excel, Canva</p></div>
+        <div class="card"><h3>Languages</h3><p>Chinese: Mother Tongue<br>English: Fluent<br>Malay: Fluent</p></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+      <div class="section-title">
+        <p>Projects</p>
+        <h2>Featured Work</h2>
+      </div>
+      <div class="grid two">
+        <article class="project-card">
+          <div class="project-top"><span>RWDD Assignment</span></div>
+          <h3>Assignment Submission System</h3>
+          <p>A responsive web-based platform designed to support assignment submission and file management. Focused on user-friendly navigation, organized content and mobile-friendly layout.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>VS Code</span></div>
+          <a class="btn secondary" href="project-rwdd.html">View Project Card</a>
+        </article>
+
+        <article class="project-card highlight">
+          <div class="project-top"><span>Capstone Project</span></div>
+          <h3>Trev - Asia Trip Planner</h3>
+          <p>A travel planning web application for Asian destinations with destination browsing, itinerary planning, user interaction, database integration and admin/user modules.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>MySQL</span><span>WampServer</span></div>
+          <div class="project-actions">
+            <a class="btn primary" href="project-trev.html">View Project Card</a>
+            <a class="btn secondary" href="projects/Capstone-Project-main/modules/User/home/home.html">Open Static Demo</a>
+          </div>
+        </article>
+      </div>
+      <p class="note">Note: GitHub Pages can show HTML/CSS/JavaScript pages. PHP and MySQL functions need WampServer locally to run fully.</p>
+    </section>
+
+    <section id="education" class="section reveal">
+      <div class="section-title"><p>Education</p><h2>Academic Background</h2></div>
+      <div class="timeline">
+        <div><strong>2024 - Present</strong><h3>Asia Pacific University (APU)</h3><p>Diploma in Information and Communication Technology (Software Engineering), CGPA 3.29</p></div>
+        <div><strong>2019 - 2024</strong><h3>SMK Seri Perling</h3><p>SPM</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact reveal">
+      <div class="section-title"><p>Contact</p><h2>Let’s Connect</h2></div>
+      <div class="contact-box">
+        <a href="mailto:pangcs0312@gmail.com">pangcs0312@gmail.com</a>
+        <a href="tel:+601159954889">+60 11-5995 4889</a>
+        <a href="https://github.com/pang0312">GitHub: pang0312</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Pang Cheng Siang. Built with HTML, CSS and JavaScript.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer>© 2026 Pang Cheng Siang. Built with HTML, CSS and JavaScript.</footer>
 </body>
 </html>
