@@ -783,7 +783,48 @@ h2 {
   }
 }
 
-  </style>
+  
+
+/* Back to top floating button */
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #06111f;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 900;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
+@media (max-width: 640px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+}
+
+</style>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -964,9 +1005,11 @@ h2 {
   <footer class="footer">
     <div class="container footer-content">
       <p>© 2026 Pang Cheng Siang. All rights reserved.</p>
-      <a href="#top">Back to top ↑</a>
+      <a href="#top" id="footerBackToTop">Back to top ↑</a>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
 
   <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
     <div class="modal-backdrop" data-close="modal"></div>
@@ -1267,6 +1310,28 @@ function setActiveNav() {
   navItems.forEach(link => {
     link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
   });
+}
+
+
+const backToTop = document.getElementById('backToTop');
+const footerBackToTop = document.getElementById('footerBackToTop');
+
+function scrollBackToTop(event) {
+  if (event) event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateBackToTopButton() {
+  if (!backToTop) return;
+  backToTop.classList.toggle('show', window.scrollY > 420);
+}
+
+if (backToTop) {
+  backToTop.addEventListener('click', scrollBackToTop);
+}
+
+if (footerBackToTop) {
+  footerBackToTop.addEventListener('click', scrollBackToTop);
 }
 
 createProjectCards();

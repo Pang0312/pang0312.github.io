@@ -265,6 +265,28 @@ function setActiveNav() {
   });
 }
 
+
+const backToTop = document.getElementById('backToTop');
+const footerBackToTop = document.getElementById('footerBackToTop');
+
+function scrollBackToTop(event) {
+  if (event) event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateBackToTopButton() {
+  if (!backToTop) return;
+  backToTop.classList.toggle('show', window.scrollY > 420);
+}
+
+if (backToTop) {
+  backToTop.addEventListener('click', scrollBackToTop);
+}
+
+if (footerBackToTop) {
+  footerBackToTop.addEventListener('click', scrollBackToTop);
+}
+
 createProjectCards();
 revealOnScroll();
 setActiveNav();
